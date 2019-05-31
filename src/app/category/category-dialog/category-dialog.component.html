@@ -1,0 +1,52 @@
+<h2 mat-dialog-title>{{name}}</h2>
+
+
+<mat-dialog-content [formGroup]="form" >
+
+    <mat-form-field>
+
+        <input matInput
+                placeholder="Название категории"
+               formControlName="name">
+
+    </mat-form-field>
+
+    <mat-form-field>
+
+        <mat-select placeholder="Выберите категорию"
+            formControlName="category">
+
+            <div *ngFor="let item of list$ | async ;let idx = index;">
+              <mat-option [value]="item._id">
+                  {{item.name}}</mat-option>
+            </div>
+
+        </mat-select>
+
+    </mat-form-field>
+
+    <mat-form-field>
+
+        <textarea matInput placeholder="Описание категории"
+            formControlName="description">
+
+        </textarea>
+
+    </mat-form-field>
+
+
+</mat-dialog-content>
+
+<mat-dialog-actions>
+
+    <button mat-button class="but but-primary"
+            (click)="close()">
+        Закрыть
+    </button>
+
+    <button mat-button class="but but-accent"
+            (click)="save()">
+        Сохранить
+    </button>
+
+</mat-dialog-actions>

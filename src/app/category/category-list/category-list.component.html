@@ -1,0 +1,40 @@
+<!-- <div class="list-container">
+  <mat-tab-group *ngIf="loader$ | async">
+    <div *ngFor="let item of data;trackBy: trackByFn">
+      <mat-tab  [label]="item.position">
+        <ng-template matTabContent>
+          <app-category-card [data]="item.data">
+          </app-category-card>
+        </ng-template>
+      </mat-tab>
+    </div>
+  </mat-tab-group> -->
+
+<div class="list-container">
+  <mat-tab-group *ngIf="loader$ | async">
+
+      <mat-tab  label="Запад">
+        <ng-template matTabContent>
+          <app-category-card [data]="west$ | async">
+          </app-category-card>
+        </ng-template>
+      </mat-tab>
+      <mat-tab  label="Центер">
+        <ng-template matTabContent>
+          <app-category-card [data]="centre$ | async">
+          </app-category-card>
+        </ng-template>
+      </mat-tab>
+      <mat-tab  label="Восток">
+        <ng-template matTabContent>
+          <app-category-card [data]="east$ | async">
+          </app-category-card>
+        </ng-template>
+      </mat-tab>
+
+  </mat-tab-group>
+
+<div *ngIf="!loader$ | async">
+  Loader...
+</div>
+

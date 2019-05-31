@@ -1,0 +1,25 @@
+<form
+  [formGroup]="form"
+  class="form-auth"
+  (ngSubmit)="onSubmit()"
+  >
+  <div class="example-container">
+    <h3>Вход</h3>
+    <mat-form-field>
+      <input matInput placeholder="Email" formControlName="email" >
+      <mat-error *ngIf="form.get('email').invalid && form.get('email').errors['required'] && form.get('email').touched">Заполните поле еmail.</mat-error>
+      <mat-error *ngIf="form.get('email').invalid && form.get('email').errors['email'] && form.get('email').touched"> Не корректный email.</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Пароль" type="password" formControlName="password" >
+      <mat-error *ngIf="form.get('password').invalid && form.get('password').errors['required'] && form.get('password').untouched">Введите пароль.</mat-error>
+      <mat-error *ngIf="form.get('password').invalid && form.get('password').touched && form.get('password').errors['minlength']">
+        Минимальная длинна пароля {{form.get('password').errors['minlength']['requiredLength']}} : ({{form.get('password').errors['minlength']['actualLength']}})
+      </mat-error>
+    </mat-form-field>
+    <button mat-button [disabled]="form.invalid || form.disabled" >Войти</button>
+    <p> Нет аккуанат? <a [routerLink]="['/auth/register']" >Зарегистрируетесь</a></p>
+  </div>
+</form>
+

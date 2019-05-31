@@ -1,0 +1,23 @@
+<mat-drawer-container class="container">
+    <mat-drawer #drawer class="sidenav" >
+      <button (click)="drawer.toggle()" mat-button routerLink="/auth/login"  >Войти</button>
+      <button (click)="drawer.toggle()" mat-button routerLink="/auth/register" >Регистрация</button>
+      <button (click)="drawer.toggle()" mat-button routerLink="/category" >Категории</button>
+      <button (click)="drawer.toggle()" (click)="logout()" mat-button r >Выход</button>
+    </mat-drawer>
+    <div class="sidenav-content">
+      <mat-toolbar>
+        <mat-toolbar-row>
+          <button mat-icon-button (click)="drawer.toggle()">
+            <mat-icon>menu</mat-icon>
+          </button>
+          <span>NGRX</span>
+          <span class="spacer"></span>
+        </mat-toolbar-row>
+      </mat-toolbar>
+    </div>
+    <div class="example-sidenav-content">
+        <router-outlet></router-outlet>
+      </div>
+  </mat-drawer-container>
+

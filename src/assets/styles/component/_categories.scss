@@ -1,0 +1,32 @@
+.grid-category{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.category-card{
+  margin-bottom: 25px;
+  margin-top: 25px;
+  padding: 10px;
+  border: 1px solid #000;
+  border-right: none;
+  transition: all .3s ease-out;
+  display: flex;
+  flex-direction: column;
+  &:hover{
+    background-color: rgb(223, 223, 223);
+  }
+  &:last-child{
+    border-right: 1px solid #000;
+  }
+  .card-controller{
+    text-align: right;
+  }
+  .card-buttons{
+    margin-top: auto;
+    margin-bottom: 1px;
+  }
+}
+img{
+  width: 100%;
+  height: 100%;
+}
+

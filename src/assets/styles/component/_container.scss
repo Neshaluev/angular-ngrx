@@ -1,0 +1,43 @@
+body {
+  font-family: Roboto, Arial, sans-serif;
+}
+
+.container {
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  .mat-drawer{
+    min-width: 200px;
+    .mat-button {
+      display: block;
+      width: 100%;
+      text-align: left;
+    }
+  }
+}
+
+.spacer{
+  flex: 1 1 auto;
+}
+
+.mat-drawer-content {
+  display: inline !important;
+}
+
+
+.float-button{
+  float: right;
+  margin-right: 20px !important;
+}
+
+
+.mat-tab-body-wrapper {
+  width: 100% !important;
+  text-align: center !important;
+}
+
+.mat-drawer-container{
+  overflow: scroll !important;
+}
